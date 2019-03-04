@@ -19,10 +19,11 @@ $WSIDAdmin = Get-PowerBIWorkspace -Scope Organization -Name 'BI Administration a
 $DSIDRefresh = Get-PowerBIDataset -Scope Organization -WorkspaceId $WSIDAdmin | ` 
     Where {$_.Name -eq "Refresh History"} | ForEach {$_.Id}
 
-#PBI Tenant Wide Monitoring
+#PBI Tenant Wide Monitoring dataset
 $DSIDMonitor = Get-PowerBIDataset -Scope Organization -WorkspaceId $WSIDAdmin | ` 
     Where {$_.Name -eq "PBI Tenant-Wide Deployment"} | ForEach {$_.Id}
 
+#Gateway Analysis dataset
 $DSIDGateway = Get-PowerBIDataset -Scope Organization -WorkspaceId $WSIDAdmin | ` 
     Where {$_.Name -eq "Gateway Analysis"} | ForEach {$_.Id}
 
