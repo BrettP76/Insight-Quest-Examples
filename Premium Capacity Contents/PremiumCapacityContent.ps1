@@ -6,8 +6,8 @@ or optionally exported to CSV files.
 
 #1. Authenticate to Power BI Service with Power BI Service Administrator credential
 
-$User = "488545@mgmresorts.com"
-$PW = "T5JFSk5kK7"
+$User = "powerbiadmin@bigcompany.com"
+$PW = "pbiadminpassword"
 
 $SecPasswd = ConvertTo-SecureString $PW -AsPlainText -Force
 $myCred = New-Object System.Management.Automation.PSCredential($User,$SecPasswd)
@@ -22,7 +22,7 @@ $RetrieveDate = Get-Date
 
 #3. Retrieve the ID of a premium capacity into a variable based on the name of a workspace which is hosted on the premium capacity
 
-$WorkspaceName = "IM: AdWorks Europe Sales"
+$WorkspaceName = "Finance Quarterly Review"
 
 $CapacityId = Get-PowerBIWorkspace -Scope Organization -Name $WorkspaceName | ForEach {$_.CapacityId}
 
