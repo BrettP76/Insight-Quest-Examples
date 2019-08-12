@@ -1,0 +1,30 @@
+
+
+--Query volume by dataset query
+EVALUATE
+SUMMARIZECOLUMNS(
+'DatasetInfo'[workspaceName],
+'DatasetInfo'[datasetName],
+CALCULATETABLE('Capacities','Capacities'[DisplayName] = @PremiumCapacity),
+"Count of Queries", sum('QueryMetrics'[totalCount])
+)
+
+--List of available premium capacities
+EVALUATE
+SELECTCOLUMNS(
+VALUES('Capacities'[displayName]),
+"Capacity", [displayName])
+
+
+--Default premium capacity
+DEFINE MEASURE 'Capacities'[QryCount] = sum('QueryMetrics'[totalCount])
+EVALUATE
+TOPN(1,Values('Capacities'[displayName]), [QryCount])
+
+
+--Min and Max Timestamps
+EVALUATE
+ROW(
+"MinTimeStamp", min('Timestamps'[Timestamp]),
+"MaxTimeStamp", max('Timestamps'[Timestamp])
+)
