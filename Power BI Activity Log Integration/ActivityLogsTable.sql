@@ -1,0 +1,36 @@
+CREATE TABLE
+BI.ActivityLogs
+(
+	[Id] VARCHAR(65) NOT NULL,
+	[RecordType] SMALLINT NOT NULL,
+	[CreationTime] VARCHAR(30) NOT NULL,
+	[Operation] VARCHAR(65) NOT NULL,
+	[OrganizationId] VARCHAR(50) NOT NULL,
+	[UserType] VARCHAR(60) NULL,
+	[UserKey]  VARCHAR(60) NULL,
+	[Workload] VARCHAR(60) NULL,
+	[UserId] VARCHAR(75) NOT NULL,
+	[ClientIP] VARCHAR(25) NOT NULL,
+	[UserAgent] VARCHAR(MAX) NULL,
+	[Activity] VARCHAR(60) NULL,
+	[ItemName] VARCHAR(150) NULL,
+	[WorkspaceName] VARCHAR(150) NULL,
+	[DatasetName] VARCHAR(150) NULL,
+	[ReportName] VARCHAR(150) NULL,
+	[WorkspaceId] VARCHAR(100) NULL,
+	[CapacityId] VARCHAR(100) NULL,
+	[CapacityName] VARCHAR(100) NULL,
+	[AppName] VARCHAR(150) NULL,
+	[ObjectId] VARCHAR(150) NULL,
+	[DatasetId] VARCHAR(100) NULL,
+	[ReportId] VARCHAR(100) NULL,
+	[IsSuccess] VARCHAR(100) NULL,
+	[ReportType] VARCHAR(30) NULL,
+	[RequestId] VARCHAR(60) NOT NULL,
+	[ActivityId] VARCHAR(60) NULL,
+	[AppReportId] VARCHAR(60) NULL,
+	[DistributionMethod] VARCHAR(40) NULL,
+	[ConsumptionMethod] VARCHAR(40) NULL,
+	[Date Retrieved] DATETIME2(0) NULL
+CONSTRAINT PK_BIActLogs PRIMARY KEY CLUSTERED ([UserId],[CreationTime],[RequestID],[Id])
+);
