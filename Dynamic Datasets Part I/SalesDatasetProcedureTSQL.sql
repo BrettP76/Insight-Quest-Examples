@@ -6,9 +6,6 @@ CREATE PROCEDURE BI.spSalesDateScenario
 ,	@DateScenario AS INT
 )
 AS
-DECLARE @DateScenarioVar AS INT;
-SET @DateScenarioVar = @DateScenario
-
 --Order date scenario
 IF @DateScenario = 1
 SELECT
