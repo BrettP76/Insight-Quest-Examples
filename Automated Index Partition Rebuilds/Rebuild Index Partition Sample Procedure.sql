@@ -2,7 +2,7 @@ CREATE PROCEDURE BI.spREBUILD_INDEX_PARTITION_TRANSACTIONLOG
 AS
 BEGIN
 
-DECLARE @Partition1 as int, @Partition2 as int, @SQLString1 as NVARCHAR(MAX), @SQLString2 as nvarchar(max)
+DECLARE @Partition1 as int, @Partition2 as int, @SQLString1 as nvarchar(max), @SQLString2 as nvarchar(max)
 
 SET @Partition1 = 
 
