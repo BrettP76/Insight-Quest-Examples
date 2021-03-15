@@ -11,7 +11,7 @@ Set-PowerBIWorkspace -Scope Organization -Id $WSIDA -CapacityId $SharedCapacityI
 
 #4. Identify the workspace to be moved to premium capacity and the premium capacity
 $WSNameB = "WorkspaceNameB"
-$PremiumCapacityName = "PremiumCapacityName"
+$PremiumCapacityName = "PremiumCapacityA"
 $WSIDB = (Get-PowerBIWorkspace -Scope Organization -Name $WSNameB).Id
 $PremiumCapacityID = (Get-PowerBICapacity -Scope Organization | Where-Object {$_.DisplayName -eq $PremiumCapacityName}).Id
 
